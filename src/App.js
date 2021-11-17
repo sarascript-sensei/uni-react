@@ -1,22 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import ListBuildingComponent from './components/ListBuildingComponent';
+import ListBuildingComponent from './components/Building/ListBuildingComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
-import CreateBuildingComponent from './components/CreateBuildingComponent';
-import ViewBuildingComponent from './components/ViewBuildingComponent';
-import ViewCabinetComponent from './components/ViewCabinetComponent';
-import CreateFloorComponent from './components/CreateFloorComponent';
-import ListFloorComponent from './components/ListFloorComponent.jsx'
-import CreateCabinetComponent from './components/CreateCabinetComponent'
-import ViewFloorComponent from './components/ViewFloorComponent';
+import CreateBuildingComponent from './components/Building/CreateBuildingComponent';
+import ViewBuildingComponent from './components/Building/ViewBuildingComponent';
+import ViewCabinetComponent from './components/Cabinets/ViewCabinetComponent';
+import CreateFloorComponent from './components/Floors/CreateFloorComponent';
+import ListFloorComponent from './components/Floors/ListFloorComponent.jsx'
+import CreateCabinetComponent from './components/Cabinets/CreateCabinetComponent'
+import ViewFloorComponent from './components/Floors/ViewFloorComponent';
 import Login from './components/LoginPage';
-import ListCabinetComponent from './components/ListCabinetComponent';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash, faPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
-library.add(faTrash, faEdit, faPlus);
+import ListCabinetComponent from './components/Cabinets/ListCabinetComponent';
 
 
 function App() {

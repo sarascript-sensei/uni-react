@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FloorService from '../services/FloorService';
+import FloorService from '../../services/FloorService';
 
 class CreateFloorComponent extends Component {
     constructor(props) {

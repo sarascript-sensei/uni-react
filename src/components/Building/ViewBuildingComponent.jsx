@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import BuildingService from "../services/BuildingService";
+
+import BuildingService from "../../services/BuildingService";
 
 import Carousel from "react-bootstrap/Carousel";
 
-import ListFloorComponent from './components/Floors/ListFloorComponent.jsx'
+import pin from "../../assets/pin.png";
 
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 
-
 import "./building.css";
+import ListFloorComponent from "../Floors/ListFloorComponent";
 
 class ViewBuildingComponent extends Component {
   constructor(props) {
@@ -36,29 +37,34 @@ class ViewBuildingComponent extends Component {
         <div className="row">
           <div className="building-detail--text column">
             <div className="building-detail--item">
-              <a
-                href={this.state.building.link2gis}
-                rel="noopener"
-                target="_blank"
-              >
-            
-                <h3> {this.state.building.address}</h3>
-              </a>
-            </div>
-            <div className="building-detail--item">
-              <h4>Описание: {this.state.building.description}</h4>
-            </div>
-            <div className="building-detail--item">
-              <h4>Количество этажей: {this.state.building.quantityOfFloor}</h4>
-            </div>
-            <div className="building-detail--item">
-              <h4>Общая площадь: {this.state.building.totalArea}</h4>
-            </div>
-            <div className="building-detail--item">
-              <h4>Полезная площадь: {this.state.building.usableArea}</h4>
-            </div>
-            <div className="building-detail--item">
-              <h4>Год постройки: {this.state.building.yearOfConstruction}</h4>
+              <table className="table table-striped table-bordered">
+              <tbody>
+    <tr>
+      <th>Описание: </th>
+      <td>{this.state.building.description}</td>
+    </tr>
+    <tr>
+      <th>Количество этажей: </th>
+      <td>{this.state.building.quantityOfFloor}</td>
+    </tr>
+    <tr>
+      <th>Адрес: </th>
+      <td>{this.state.building.address}</td>
+    </tr>
+    <tr>
+      <th>Общая площадь: </th>
+      <td>{this.state.building.totalArea}</td>
+    </tr>
+    <tr>
+      <th>Полезная площадь: </th>
+      <td>{this.state.building.usableArea}</td>
+    </tr>
+    <tr>
+      <th>Год постройки: </th>
+      <td>{this.state.building.yearOfConstruction}</td>
+    </tr>
+    </tbody>
+    </table>
             </div>
           </div>
 
@@ -73,16 +79,20 @@ class ViewBuildingComponent extends Component {
               zoom={15}
               onClick={this.onMapClicked}
             >
-              {/* <Marker position={{ this.state.building.coords.latitude, this.state.building.coords.longitude }} /> */}
-              <Marker 
-                position={ {lat: 42.8754332, lng: 74.6016192} }
+              <Marker
+                position={{
+                  lat: this.state.building.coords?.latitude
+                    ? this.state.building.coords.latitude
+                    : 42.8754332,
+                  lng: this.state.building.coords?.longitude
+                    ? this.state.building.coords.longitude
+                    : 74.6016192,
+                }}
               />
-
             </Map>
           </div>
         </div>
 
-        <ListFloorComponent/>
         <div className="building-detail--slider">
           {this.state.building.image ? (
             <Carousel fade interval={5000}>
@@ -119,8 +129,10 @@ class ViewBuildingComponent extends Component {
               })}
             </Carousel>
           ) : null}
+                    <ListFloorComponent /> 
         </div>
       </div>
+
     );
   }
 }

@@ -1,5 +1,6 @@
 
 
+
 .building-detail{
     width: 100%;
 }
@@ -47,12 +48,6 @@
     margin-top: 80px;
 }
 
-
-.building-create--map{
-    width: auto;
-    height: 50vh;
-    position: relative;
-}
 .building-detail--map{
     width: 50% !important;
     height: 50vh;
@@ -104,71 +99,16 @@
     right: -80px !important;
 }
 
-
+.carousel-control-next .carousel-control-next-icon{
+    background-image: url('../../assets//right-arrow.png');
+    background-repeat: no-repeat;
+}
 
 .carousel-control-prev{
     left: -80px !important;
 }
 
-
-/*building list styles*/
-body {
-    background: #eee
+.carousel-control-prev .carousel-control-prev-icon{
+    background-image: url('../../assets//left-arrow.png');
+    background-repeat: no-repeat;
 }
-
-.image {
-    width: 100%
-}
-
-.dot {
-    height: 7px;
-    width: 7px;
-    margin-left: 6px;
-    margin-right: 6px;
-    margin-top: 3px;
-    background-color: blue;
-    border-radius: 50%;
-    display: inline-block
-}
-
-.spec-1 {
-    color: #938787;
-    font-size: 15px
-}
-
-h3 {
-    font-weight: 400
-}
-
-.icon-style {
-    margin-left: 20px;
-    background-color: cadetblue;
-}
-.icon {
-    color:brown;
-}
-.input-group-button {
-    padding: 0 0 0 5px;
-    border-color: transparent;
-    background: none;
-}
-
-.btn {
-    color: #e5dc15;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 1rem;
-    padding: 0.5rem;
-    border: 2px solid #e5dc15;
-    border-radius: 0.5rem;
-  }
-  
-  .btn:hover {
-    background: #e5dc15;
-    color: #0e79b2;
-  }
-  .sb-select {
-    float: right;
-    overflow: hidden;
-  }

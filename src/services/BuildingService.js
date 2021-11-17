@@ -11,6 +11,10 @@ class BuildingService {
         return axios.get(BUILDING_API_BASE_URL + "/building/get-all-building", this.config);
     }
 
+    getBuildingbyCategori(categoryId){
+        return axios.get(BUILDING_API_BASE_URL + `/building/get-all-building-by-category-and-type/${categoryId}`, this.config);
+    }
+
     createBuilding(building){
         return axios.post(BUILDING_API_BASE_URL + '/building/add', building, this.config);
     }
