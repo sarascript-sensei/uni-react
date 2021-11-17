@@ -14,6 +14,7 @@ class CreateCabinetComponent extends Component {
       name: "",
       number: null,
       description: "",
+      image: [],
     };
     this.changeNameHandler = this.changeNameHandler.bind(this);
     this.changeNumberHandler = this.changeNumberHandler.bind(this);
@@ -85,7 +86,11 @@ class CreateCabinetComponent extends Component {
   changeDescriptionHandler = (event) => {
     this.setState({ description: event.target.value });
   };
-
+  readFileDataAsBase64(e) {
+    // var bytes = File(e.target.files).readBytes()
+    // // var base64 = Base64.getEncoder().encodeToString(bytes)
+    // // console.log(base64)
+}
   cancel() {
     const cabinet = {
       buildingId: this.props.location.state.buildingId,
@@ -142,6 +147,17 @@ class CreateCabinetComponent extends Component {
                     />
                   </div>
 
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label> Изображения: </label>
+                      <input
+                        className="image-input"
+                        type="file"
+                        multiple
+                        onChange={this.readFileDataAsBase64}
+                      />
+                    </div>
+                  </div>
                   <button
                     className="btn btn-success"
                     onClick={this.saveOrUpdateCabinet}
